@@ -1,0 +1,26 @@
+upstream fastcgi_backend {
+    server  unix:/run/php/php7.4-fpm.sock;
+}
+server {
+    listen 80;
+    server_name magento2.local;
+    set $MAGE_ROOT /home/ubuntu/magento2;
+    include /home/ubuntu/magento2/nginx.conf.sample;
+}
+server {
+    listen 80;
+    server_name react.local;
+    root /home/ubuntu/react/build;
+    index index.html index.htm;
+    location /graphql {
+        proxy_pass http://magento2.local/graphql;
+    }
+}
+server {
+    listen 443 ssl;
+    server_name magento2.local;
+    ssl_certificate /etc/nginx/magento2.local.crt;
+    ssl_certificate_key /etc/nginx/magento2.local.key;
+    set $MAGE_ROOT /home/ubuntu/magento2;
+    include /home/ubuntu/magento2/nginx.conf.sample;
+}
