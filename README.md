@@ -5,7 +5,7 @@ NOTE: before you start, be sure you remember the credentials to access the Magen
 #### Create Docker image
 
 ```
-docker build --no-cache --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)" --build-arg SSH_PUBLIC_KEY="$(cat ~/.ssh/id_rsa.pub)" -t magento2.4_test .
+docker build --no-cache --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)" --build-arg SSH_PUBLIC_KEY="$(cat ~/.ssh/id_rsa.pub)" -t magento2 .
 ```
 
 #### Create Docker network if it doesn't exist
@@ -17,7 +17,7 @@ docker network create commerce-cluster
 #### Start Docker container
 
 ```
-docker run --network commerce-cluster --name  magento-container -it -p 80:80 -p 443:443 magento2.4
+docker run --network commerce-cluster --name  magento-container -it -p 80:80 -p 443:443 magento2
 ```
 
 ### Inside the Docker container ..
@@ -28,7 +28,7 @@ docker run --network commerce-cluster --name  magento-container -it -p 80:80 -p 
 su - ubuntu
 ```
 
-#### clone magento2.4 repo
+#### clone magento 2 repo
 
 ```
 git clone https://github.com/narbone/magento-commerce.git magento2
