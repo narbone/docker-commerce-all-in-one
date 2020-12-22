@@ -28,21 +28,23 @@ RUN apt-get install -y \
     nano \
     unzip \
     nginx \
+    mariadb-server \
     mariadb-client \
     net-tools \
     locales \
     ca-certificates 
 
-# install mariadb
+# install mariadb 10.4
+RUN apt-get remove -y mariadb-server
 RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 RUN add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.lstn.net/mariadb/repo/10.4/ubuntu bionic main'
-RUN apt update
-RUN apt install -y mariadb-server
+RUN apt-get update -y
+RUN apt-get install -y mariadb-server
 
 # clenup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Set locales
+# set locales
 RUN locale-gen en_AU.UTF-8
 
 # nginx default file
@@ -55,7 +57,7 @@ COPY magento2.local.key /etc/nginx/magento2.local.key
 # extend php-fpm memory limit
 RUN echo 'memory_limit = 2G' >> /etc/php/7.4/fpm/php.ini
 
-# Install composer 1
+# install composer 1
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer self-update --1
 

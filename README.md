@@ -5,13 +5,19 @@ NOTE: before you start, be sure you remember the credentials to access the Magen
 #### Create Docker image
 
 ```
-docker build --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)" --build-arg SSH_PUBLIC_KEY="$(cat ~/.ssh/id_rsa.pub)" -t magento2.4 .
+docker build --no-cache --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)" --build-arg SSH_PUBLIC_KEY="$(cat ~/.ssh/id_rsa.pub)" -t magento2.4_test .
+```
+
+#### Create Docker network if it doesn't exist
+
+```
+docker network create commerce-cluster
 ```
 
 #### Start Docker container
 
 ```
-docker run -it -p 80:80 -p 443:443 --add-host elasticsearch.magento.local:172.17.0.2 magento2.4
+docker run --network commerce-cluster --name  magento-container -it -p 80:80 -p 443:443 magento2.4
 ```
 
 ### Inside the Docker container ..
@@ -89,12 +95,10 @@ bin/magento setup:install \
  --currency=USD \
  --timezone=America/Chicago \
  --use-rewrites=1 \
-  --elasticsearch-host=172.17.0.2 \
- --elasticsearch-port=9200 \
- --elasticsearch-enable-auth=0
+ --elasticsearch-host=elasticsearch-container
 ```
 
-#### optionally, use https on front end
+#### set https front end and front end admin
 
 ```
 bin/magento setup:store-config:set --base-url-secure="https://magento2.local/"
