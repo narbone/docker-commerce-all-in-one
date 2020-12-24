@@ -74,7 +74,6 @@ RUN usermod -a -G ubuntu www-data
 # install Magento CLI and get host ssh keys to clone Magento cloud repos later
 USER ubuntu
 WORKDIR /home/ubuntu
-RUN curl -sS https://accounts.magento.cloud/cli/installer | php
 ARG SSH_PRIVATE_KEY
 ARG SSH_PUBLIC_KEY
 RUN mkdir -p /home/ubuntu/.ssh
