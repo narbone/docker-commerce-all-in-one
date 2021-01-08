@@ -31,7 +31,7 @@ su - ubuntu
 #### clone magento 2 repo
 
 ```
-git clone https://github.com/narbone/magento-commerce.git magento2
+git clone https://github.com/narbone/commerce-e-e-with-venia-data.git magento2
 ```
 
 #### run composer to install Magento 2 dependencies
