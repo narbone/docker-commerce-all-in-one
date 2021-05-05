@@ -60,6 +60,7 @@ RUN echo 'memory_limit = 2G' >> /etc/php/7.4/fpm/php.ini
 # install composer 1
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer self-update --1
+RUN composer global require hirak/prestissimo
 
 # expose ports
 EXPOSE 80
@@ -74,6 +75,7 @@ RUN usermod -a -G ubuntu www-data
 # install Magento CLI and get host ssh keys to clone Magento cloud repos later
 USER ubuntu
 WORKDIR /home/ubuntu
+RUN curl -sS https://accounts.magento.cloud/cli/installer | php
 ARG SSH_PRIVATE_KEY
 ARG SSH_PUBLIC_KEY
 RUN mkdir -p /home/ubuntu/.ssh
