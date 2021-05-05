@@ -22,10 +22,12 @@ docker run --network commerce-cluster --name  magento-container -it -p 80:80 -p 
 
 ### Inside the Docker container ..
 
-#### become user ubuntu
+#### become user ubuntu and login to Magento Cloud with a token created at https://accounts.magento.cloud
 
 ```
 su - ubuntu
+magento-cloud auth:api-token-login
+magento-cloud ssh-cert:load
 ```
 
 #### clone magento 2 repo
