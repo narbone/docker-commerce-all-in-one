@@ -30,10 +30,16 @@ magento-cloud auth:api-token-login
 magento-cloud ssh-cert:load
 ```
 
-#### clone magento 2 repo
+#### be sure you can ssh out and choose your favorit project
 
 ```
-git clone https://github.com/narbone/commerce-e-e-with-venia-data.git magento2
+mgc project:get
+```
+
+#### at directory prompt, type 'magento2'
+
+```
+Directory [ams-pro-120-sandbox]: magento2
 ```
 
 #### run composer to install Magento 2 dependencies
