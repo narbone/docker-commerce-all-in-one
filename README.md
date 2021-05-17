@@ -1,6 +1,6 @@
 ### Simple Docker container to run a Magento 2 local instance cloning a Magento Cloud project branch
 
-NOTE: before you start, be sure you remember the credentials to access the Magento Cloud - https://accounts.magento.cloud
+NOTE: to install Magento 2 following this guide you need Magento 2 access keys that can be retrived at the following URL https://marketplace.magento.com/customer/accessKeys and a token that can be generated at the following URL https://accounts.magento.cloud
 
 #### Create Docker image
 
