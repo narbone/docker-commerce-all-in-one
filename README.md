@@ -30,7 +30,7 @@ magento-cloud auth:api-token-login
 magento-cloud ssh-cert:load
 ```
 
-#### clone your magento.cloud project in a dir calle magento2
+#### clone your magento.cloud project to a dir called magento2
 
 ```
 git clone --branch staging <magento_cloud_project_i>@git.us-4.magento.cloud:s2oqdnin64czk.git magento2
