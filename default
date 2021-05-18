@@ -8,15 +8,6 @@ server {
     include /home/ubuntu/magento2/nginx.conf.sample;
 }
 server {
-    listen 80;
-    server_name react.local;
-    root /home/ubuntu/react/build;
-    index index.html index.htm;
-    location /graphql {
-        proxy_pass http://magento2.local/graphql;
-    }
-}
-server {
     listen 443 ssl;
     server_name magento2.local;
     ssl_certificate /etc/nginx/magento2.local.crt;
