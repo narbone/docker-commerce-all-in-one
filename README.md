@@ -79,10 +79,10 @@ flush privileges; \
 "
 ```
 
-### pull Elasticsearch image that is required by Magento2 ver >=  2.4
+#### pull Elasticsearch image that is required by Magento2 ver >=  2.4
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 
-### run Elasticsearch container
+#### run Elasticsearch container
 docker run --network commerce-cluster --name elasticsearch-container -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 
 
