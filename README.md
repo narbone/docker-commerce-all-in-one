@@ -30,16 +30,10 @@ magento-cloud auth:api-token-login
 magento-cloud ssh-cert:load
 ```
 
-#### be sure you can ssh out and choose your favorit project
+#### clone your magento.cloud project in a dir calle magento2
 
 ```
-mgc project:get
-```
-
-#### at directory prompt, type 'magento2'
-
-```
-Directory [ams-pro-120-sandbox]: magento2
+git clone --branch staging <magento_cloud_project_i>@git.us-4.magento.cloud:s2oqdnin64czk.git magento2
 ```
 
 #### run composer to install Magento 2 dependencies
