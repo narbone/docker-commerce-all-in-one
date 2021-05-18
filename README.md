@@ -73,7 +73,7 @@ flush privileges; \
 "
 ```
 
-#### on your host machine (not the Docker container) open a new terminal
+### on your host machine (not the Docker container) open a new terminal
 
 #### pull Elasticsearch image that is required by Magento2 ver >=  2.4
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.0
@@ -81,6 +81,8 @@ docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 #### run Elasticsearch container
 docker run --network commerce-cluster --name elasticsearch-container -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 
+
+### Inside the Docker container ..
 
 #### install Magento as ubuntu user
 
@@ -127,9 +129,11 @@ bin/magento indexer:reindex
 bin/magento cache:flush
 ```
 
-#### on your host machine (not the Docker container) add 'magento2.local' to /etc/hosts
+### on your host machine (not the Docker container) add 'magento2.local' to /etc/hosts
 
-127.0.0.1 localhost **magento2.local**
+```
+127.0.0.1 localhost magento2.local
+```
 
 ### Web UI
 
