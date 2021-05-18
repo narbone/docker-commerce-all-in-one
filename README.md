@@ -79,7 +79,7 @@ flush privileges; \
 "
 ```
 
-#### pull Elasticsearch image that is required by Magento 2 >= ver 2.4
+### pull Elasticsearch image that is required by Magento2 ver >=  2.4
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 
 ### run Elasticsearch container
