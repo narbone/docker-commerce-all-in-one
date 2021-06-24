@@ -102,7 +102,7 @@ bin/magento setup:install \
  --backend-frontname=admin \
  --admin-firstname=admin \
  --admin-lastname=admin \
- --admin-email=narbone@adobe.com \
+ --admin-email=narbone@whatever.com \
  --admin-user=admin \
  --admin-password=magento2 \
  --language=en_US \
