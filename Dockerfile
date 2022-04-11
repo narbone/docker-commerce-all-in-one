@@ -59,7 +59,9 @@ RUN echo 'memory_limit = 2G' >> /etc/php/7.4/fpm/php.ini
 
 # install composer 1
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# composer 1 is required for Commerce version < 2.4.4 
 RUN composer self-update --1
+# prestissimo only works with composer 1
 RUN composer global require hirak/prestissimo
 
 # expose ports
