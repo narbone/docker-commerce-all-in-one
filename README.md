@@ -47,8 +47,8 @@ composer install
 #### set right direcrory permissions
 
 ```
-find var generated vendor pub/static pub/media app/etc -type f -exec chmod u+w {} +
-find var generated vendor pub/static pub/media app/etc -type d -exec chmod u+w {} +
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 chmod u+x bin/magento
 ```
 
