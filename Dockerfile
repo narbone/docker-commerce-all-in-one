@@ -57,7 +57,7 @@ COPY magento2.local.key /etc/nginx/magento2.local.key
 # extend php-fpm memory limit
 RUN echo 'memory_limit = 2G' >> /etc/php/7.4/fpm/php.ini
 
-# install composer 2 is recommended for Commerce version > 2.4 
+# install composer 2
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 
