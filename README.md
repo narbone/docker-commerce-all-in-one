@@ -1,7 +1,7 @@
 ### Simple Docker container to run a Magento 2 local instance cloning a Magento Cloud project branch
 
 NOTE: to install Magento 2 following this guide you need Magento 2 access keys that can be retrived at the following URL https://marketplace.magento.com/customer/accessKeys and a token that can be generated at the following URL https://accounts.magento.cloud .
-Container runs on php 7.4 therefore you will be able to install Magento versions 2.4 and above as for the following doc https://devdocs.magento.com/cloud/project/services.html#service-versions. Checkout the branch 2.4.0-2.4.3-p2 for versions benween 2.4.0 and 2.4.3-p2 that uses Composer version 1.
+Container runs on php 7.4 therefore you will be able to install Magento versions 2.4 and above as for the following doc https://devdocs.magento.com/cloud/project/services.html#service-versions. Checkout the branch 2.4.0-2.4.3-p2 to install Commerce versions between 2.4.0 and 2.4.3-p2 as it uses Composer version 1 https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html.
 
 
 #### Create Docker image
