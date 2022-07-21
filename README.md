@@ -1,8 +1,7 @@
 ### Simple Docker container to run a Magento 2 local instance cloning a Magento Cloud project branch
 
 NOTE: to install Magento 2 following this guide you need Magento 2 access keys that can be retrived at the following URL https://marketplace.magento.com/customer/accessKeys and a token that can be generated at the following URL https://accounts.magento.cloud .
-Container runs on php 7.4 therefore you will be able to install Magento versions 2.4 and above as for the following doc https://devdocs.magento.com/cloud/project/services.html#service-versions. Checkout the branch 2.4.0-2.4.3-p2 to install Commerce versions between 2.4.0 and 2.4.3-p2 as it uses Composer version 1 https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html.
-
+Container runs on php 8.1 therefore you will be able to install Magento versions 2.4.4 and above as for the following doc https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html. Checkout the branch 2.4.0-2.4.3-p2 to install Commerce versions between 2.4.0 and 2.4.3-p2 as it uses Composer version 1.
 
 #### Create Docker image
 
@@ -77,12 +76,13 @@ flush privileges; \
 
 ### on your host machine (not the Docker container) open a new terminal
 
-#### pull Elasticsearch image that is required by Magento2 ver >=  2.4
+#### pull Elasticsearch image that is required by Magento2 ver >= 2.4
+
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 
 #### run Elasticsearch container
-docker run --network commerce-cluster --name elasticsearch-container -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 
+docker run --network commerce-cluster --name elasticsearch-container -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 
 ### Inside the Docker container ..
 

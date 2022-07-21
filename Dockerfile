@@ -13,17 +13,17 @@ RUN apt-get install -y \
     ssh \
     curl \
     git \
-    php7.4-cli \
-    php7.4-bcmath \
-    php7.4-curl \
-    php7.4-fpm \
-    php7.4-gd \
-    php7.4-mbstring \
-    php7.4-mysql \
-    php7.4-soap \
-    php7.4-xml \
-    php7.4-zip \
-    php7.4-intl \
+    php8.1-cli \
+    php8.1-bcmath \
+    php8.1-curl \
+    php8.1-fpm \
+    php8.1-gd \
+    php8.1-mbstring \
+    php8.1-mysql \
+    php8.1-soap \
+    php8.1-xml \
+    php8.1-zip \
+    php8.1-intl \
     vim \
     nano \
     unzip \
@@ -55,11 +55,10 @@ COPY magento2.local.crt /etc/nginx/magento2.local.crt
 COPY magento2.local.key /etc/nginx/magento2.local.key
 
 # extend php-fpm memory limit
-RUN echo 'memory_limit = 2G' >> /etc/php/7.4/fpm/php.ini
+RUN echo 'memory_limit = 2G' >> /etc/php/8.1/fpm/php.ini
 
 # install composer 2
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
 
 # expose ports
 EXPOSE 80
