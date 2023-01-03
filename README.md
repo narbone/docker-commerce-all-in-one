@@ -60,7 +60,7 @@ exit
 
 ```
 service nginx start
-service php7.4-fpm start
+service php8.1-fpm start
 service mysql start
 ```
 
