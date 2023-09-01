@@ -60,7 +60,7 @@ exit
 
 ```
 service nginx start
-service php8.1-fpm start
+service php8.2-fpm start
 service mysql start
 ```
 
@@ -76,13 +76,9 @@ flush privileges; \
 
 ### on your host machine (not the Docker container) open a new terminal
 
-#### pull Elasticsearch image that is required by Magento2 ver >= 2.4
+#### run Opensearch container
 
-docker pull docker.elastic.co/elasticsearch/elasticsearch:7.9.0
-
-#### run Elasticsearch container
-
-docker run --network commerce-cluster --name elasticsearch-container -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.9.0
+docker run --network commerce-cluster -p 9200:9200 -p 9600:9600 -e "discovery.type=single-node" -e "plugins.security.disabled=true" --name opensearch-container -d opensearchproject/opensearch:2.5.0
 
 ### Inside the Docker container ..
 
@@ -110,7 +106,8 @@ bin/magento setup:install \
  --currency=USD \
  --timezone=America/Chicago \
  --use-rewrites=1 \
- --elasticsearch-host=elasticsearch-container
+ --opensearch-host=opensearch-container \
+ --search-engine=opensearch
 ```
 
 #### set https front end and front end admin

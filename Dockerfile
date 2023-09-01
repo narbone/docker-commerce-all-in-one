@@ -13,17 +13,17 @@ RUN apt-get install -y \
     ssh \
     curl \
     git \
-    php8.1-cli \
-    php8.1-bcmath \
-    php8.1-curl \
-    php8.1-fpm \
-    php8.1-gd \
-    php8.1-mbstring \
-    php8.1-mysql \
-    php8.1-soap \
-    php8.1-xml \
-    php8.1-zip \
-    php8.1-intl \
+    php8.2-cli \
+    php8.2-bcmath \
+    php8.2-curl \
+    php8.2-fpm \
+    php8.2-gd \
+    php8.2-mbstring \
+    php8.2-mysql \
+    php8.2-soap \
+    php8.2-xml \
+    php8.2-zip \
+    php8.2-intl \
     vim \
     nano \
     unzip \
@@ -37,7 +37,7 @@ RUN apt-get install -y \
 # install mariadb 10.6
 RUN apt-get remove -y mariadb-server
 RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-RUN add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.lstn.net/mariadb/repo/10.4/ubuntu bionic main'
+RUN add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.lstn.net/mariadb/repo/10.6/ubuntu bionic main'
 RUN apt-get update -y
 RUN apt-get install -y mariadb-server
 
@@ -55,7 +55,7 @@ COPY magento2.local.crt /etc/nginx/magento2.local.crt
 COPY magento2.local.key /etc/nginx/magento2.local.key
 
 # extend php-fpm memory limit
-RUN echo 'memory_limit = 2G' >> /etc/php/8.1/fpm/php.ini
+RUN echo 'memory_limit = 2G' >> /etc/php/8.2/fpm/php.ini
 
 # install composer 2
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
