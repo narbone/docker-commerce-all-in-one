@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
-LABEL maintainer="narbone@adobe.com"
+LABEL maintainer="fabio.narbone@gmail.com"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
