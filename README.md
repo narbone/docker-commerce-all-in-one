@@ -104,7 +104,7 @@ bin/magento setup:install \
  --admin-firstname=admin \
  --admin-lastname=admin \
  --admin-email=narbone@whatever.com \
- --admin-user=admin \
+ --admin-user=narbone \
  --admin-password=magento2 \
  --language=en_US \
  --currency=USD \

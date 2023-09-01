@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="narbone@adobe.com"
 
@@ -34,7 +34,7 @@ RUN apt-get install -y \
     locales \
     ca-certificates 
 
-# install mariadb 10.4
+# install mariadb 10.6
 RUN apt-get remove -y mariadb-server
 RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 RUN add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.lstn.net/mariadb/repo/10.4/ubuntu bionic main'
@@ -84,3 +84,5 @@ RUN chmod 644 /home/ubuntu/.ssh/id_rsa.pub
 
 # finally start the container as root
 USER root
+
+
