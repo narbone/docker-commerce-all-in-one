@@ -1,4 +1,4 @@
-### Simple Docker container to run a Adobe Commerce on local instance cloning a Adobe Commerce Cloud project branch
+### Simple Docker container to run an Adobe Commerce local instance cloning a Adobe Commerce Cloud project branch
 
 NOTE: to install Adobe Commerce following this guide you need Adobe Commerce access keys that can be retrived at the following URL https://marketplace.magento.com/customer/accessKeys and a token that can be generated at the following URL https://accounts.magento.cloud .
 Container runs on php 8.2 therefore you will be able to install Magento versions 2.4.6 and above as for the following doc https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html. Clone a different branch to install older Commerce versions .
