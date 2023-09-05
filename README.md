@@ -113,6 +113,7 @@ bin/magento setup:install \
 #### set https front end and front end admin
 
 ```
+bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
 bin/magento module:disable Magento_TwoFactorAuth
 bin/magento setup:store-config:set --base-url-secure="https://magento2.local/"
 bin/magento setup:store-config:set --use-secure 1
