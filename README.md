@@ -1,7 +1,7 @@
 ### Simple Docker container to run a Adobe Commerce ( former Magento 2 ) on local instance cloning a Adobe Commerce Cloud project branch
 
 NOTE: to install Adobe Commerce following this guide you need Adobe Commerce access keys that can be retrived at the following URL https://marketplace.magento.com/customer/accessKeys and a token that can be generated at the following URL https://accounts.magento.cloud .
-Container runs on php 8.1 therefore you will be able to install Magento versions 2.4.4 and above as for the following doc https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html. Checkout the branch 2.4.0-2.4.3-p2 to install Commerce versions between 2.4.0 and 2.4.3-p2 .
+Container runs on php 8.1 therefore you will be able to install Magento versions beteen >= 2.4.4 and <= 2.4.5-p4 as for the following doc https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html. Checkout the branch 2.4.0-2.4.3-p2 to install Commerce versions between 2.4.0 and 2.4.3-p2 .
 
 #### Create Docker image
 
