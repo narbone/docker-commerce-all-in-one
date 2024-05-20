@@ -13,17 +13,17 @@ RUN apt-get install -y \
     ssh \
     curl \
     git \
-    php8.2-cli \
-    php8.2-bcmath \
-    php8.2-curl \
-    php8.2-fpm \
-    php8.2-gd \
-    php8.2-mbstring \
-    php8.2-mysql \
-    php8.2-soap \
-    php8.2-xml \
-    php8.2-zip \
-    php8.2-intl \
+    php8.3-cli \
+    php8.3-bcmath \
+    php8.3-curl \
+    php8.3-fpm \
+    php8.3-gd \
+    php8.3-mbstring \
+    php8.3-mysql \
+    php8.3-soap \
+    php8.3-xml \
+    php8.3-zip \
+    php8.3-intl \
     vim \
     nano \
     unzip \
@@ -55,7 +55,7 @@ COPY magento2.local.crt /etc/nginx/magento2.local.crt
 COPY magento2.local.key /etc/nginx/magento2.local.key
 
 # extend php-fpm memory limit
-RUN echo 'memory_limit = 2G' >> /etc/php/8.2/fpm/php.ini
+RUN echo 'memory_limit = 2G' >> /etc/php/8.3/fpm/php.ini
 
 # install composer 2
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
